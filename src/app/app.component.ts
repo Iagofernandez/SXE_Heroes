@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ServicioDeAutentService} from './servicio-de-autent.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styles: []
 })
 export class AppComponent {
+  constructor(public authComponent: ServicioDeAutentService){
+
+  }
   title = 'Heroes';
 }

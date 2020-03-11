@@ -1,4 +1,30 @@
 <h1>{{title}}....</h1>
+<div class="loginDiv" *ngIf="( authComponent.user | async) as user; else login">{{user.email}} - {{user.uid}}
+ <br/><br/>
+ <button class="btn btn-secondary" (click)="authComponent.logout()">OUT</button>
+ <br/><br/>
+</div>
+<ng-template #login>
+
+<div class="loginDiv">
+
+    <br/><br/>
+    <button class="btn btn-primary" (click)="authComponent.login()">
+      <i class="far fa-envelope"></i>
+      Email Login</button>
+    <br/><br/>
+    <button class="btn btn-danger" (click)="authComponent.glogin()">
+      <i class="fab fa-google"></i>
+      Google Login
+    </button>
+    <br><br/>
+    <button class="btn btn-primary" (click)="authComponent.gitlogin()">
+        <i class="far fa-envelope"></i>
+        Git Login</button>
+
+</div>
+
+</ng-template>
 <app-heroes></app-heroes>
 
 
